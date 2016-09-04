@@ -80,3 +80,5 @@ menos que metamos uno de estos para cada tipo de moneda. Por el precio de $650, 
 monedero electrónico que se le puede configurar para que lea hasta 4 diferentes tipos de moneda.
 ![alt text][monedero]
 [monedero]:https://www.dropbox.com/s/7k0sx4jpy3zcu6v/Screen%20Shot%202015-11-26%20at%208.23.59%20PM.png?dl=0 "Imagen del Monedero Electronico"
+
+![alt text](https://www.dropbox.com/s/7k0sx4jpy3zcu6v/Screen%20Shot%202015-11-26%20at%208.23.59%20PM.png?dl=0)
