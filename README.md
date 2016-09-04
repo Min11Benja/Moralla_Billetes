@@ -37,9 +37,16 @@ Codigo para Maquina Morralla_Billetes_Monedas
 ---
 ####INTRODUCCION
 
-Hay una alta demanda de feria todos los dias para comerciantes y compradores, y una gran escazes de feria durante 2/3 del dia. Los metodos actuales son incompetentes eh inciertos pues lo hacen de forma gratuita y de muy mala gana. Debido a este y a otros factores los negocios no cuentan con el suficiente cambio para cobrar por sus productos o servicios. Esto es un problema serio cuando uno tiene que dejar ir una venta por no poder regresarle feria al cliente.
+Hay una alta demanda de feria todos los dias para comerciantes y compradores, y una gran escazes de feria durante 2/3 del dia. Los metodos actuales para abastecerse de feria son incompetentes eh inciertos pues lo hacen de forma gratuita y de muy mala gana. Debido a este y a otros factores los negocios no cuentan con el suficiente cambio para cobrar por sus productos o servicios. Esto es un problema serio cuando ellos tienen que dejar ir una venta por no poder regresarle feria suficiente al cliente.
 
-Nuestra maquina "Morralla" provee de una forma simple, automatizada, confiable y accesible a toda hora del dia de obtener feria en monedas y billetes de su eleccion, a cambio de una pequeña cuota por transacción.
+"Morralla" es un proyecto personal, donde intento crear una solucion funcional y factible para este problema que veo a diario a mi alrededor. Esta maquina te provee de una forma simple, automatizada, confiable y accesible a toda hora del dia una forma de obtener feria en monedas y billetes de tu eleccion, a cambio de una pequeña cuota por transacción. (10% sobre el Billete)
 
+| Billete    | Comission    | Recibes  |
+| ------------- |:-------------:| -----:|
+| $ 20.00 | -$ 2.00 | $ 18.00 |
+| $ 50.00 | -$ 5.00 | $ 45.00 |
+| $100.00 | -$10.00 | $ 90.00 |
+| $200.00 | -$20.00 | $180.00 |
+| $500.00 | -$50.00 | $450.00 |
 ---
 ####HARDWARE EMPLEADO
