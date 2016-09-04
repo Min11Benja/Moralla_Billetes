@@ -3,8 +3,8 @@ Codigo para Maquina Morralla_Billetes_Monedas
 
 ###INDICE
 
-⋅⋅*Introduccion a Morralla
-⋅⋅*Partes empleadas de hardware
+1.Introduccion a Morralla
+2.Partes empleadas de hardware
 ⋅⋅*Esquema de conexion para Leer pulsos del Monedero
 ⋅⋅*Codigo Leer Pulsos de Moneero
 ⋅⋅*Esquema de conexion para Leer pulsos del NV10USB
