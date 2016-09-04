@@ -57,3 +57,31 @@ Hay una alta demanda de feria todos los dias para comerciantes y compradores, y 
 | $500.00 | -$50.00 | $450.00 |
 ---
 ####HARDWARE EMPLEADO
+La mayoria del hardware empleado es sacado de estas maquinas de apostar
+IMAGEN AQUI
+Le llamaremos a esta maquina la Maquina de Frutitas y esta viene con todas estas partes:
+IMAGEN DE PARTES AQUI
+El hardware que no viene incluido en estas maquinas y que puedes conseguir por mercadolibre o alguna otra pagina web es el siguiente:
+
++ Monedero Electrónico de Múltiples Monedas
++ 
++ Arduino MEGA
++ 
++ Relevador de 5v
++ 
++ Lector de Billetes NV10USB
++ 
++ Fuente 12v 3A para Lector de Billetes NV10USB
++ 
++ Cable (2-3 mts)
++ 
+
+
+---
+####LEER PULSOS DE MONEDERO
+
+PARTE 001: Leer Pulsos del Monedero Electrónico
+Queremos que la maquina lea distintas monedas y según estas monedas, expulse una cantidad de pesos. El
+monedero que viene con la maquina de tragamonedas de fruititas solo lee un tipo de moneda, este monedero no nos sirve, a
+menos que metamos uno de estos para cada tipo de moneda. Por el precio de $650, podemos emplear un solo
+monedero electrónico que se le puede configurar para que lea hasta 4 diferentes tipos de moneda.
