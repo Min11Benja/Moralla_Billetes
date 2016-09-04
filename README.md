@@ -44,7 +44,8 @@ Hay una alta demanda de feria todos los dias para comerciantes y compradores, y 
 | Moneda    | Comission    | Recibes  |
 | ------------- |:-------------:| -----:|
 | $ 1.00 | -$ 0.00 | $ 1.00 |
-| $ 2.00 | -$ 0.00 | $ 5.00 |
+| $ 2.00 | -$ 0.00 | $ 2.00 |
+| $ 5.00 | -$ 0.00 | $ 5.00 |
 | $10.00 | -$1.00 | $ 9.00 |
 
 | Billete    | Comission    | Recibes  |
