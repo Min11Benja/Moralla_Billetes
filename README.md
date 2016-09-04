@@ -3,20 +3,28 @@ Codigo para Maquina Morralla_Billetes_Monedas
 
 ###INDICE
 
-1.Introduccion a Morralla
+######⋅Introduccion a Morralla
 
-2.Partes empleadas de hardware
+⋅⋅Partes empleadas de hardware
 
 ⋅⋅*Esquema de conexion para Leer pulsos del Monedero
 
 ⋅⋅*Codigo Leer Pulsos de Moneero
+
 ⋅⋅*Esquema de conexion para Leer pulsos del NV10USB
+
 ⋅⋅*Codigo Leer pulsos del NV10USB
+
 ⋅⋅*Esquema de conexion para Accionar Hopper con Modulo de Relevador
+
 ⋅⋅*Codigo Accionar Hopper con modulo
+
 ⋅⋅*Esquema de conexion para Leer pulsos del Sensor del Hopper expulsador de Monedas
+
 ⋅⋅*Codigo Leer pulsos del Sensor del Hopper
+
 ⋅⋅*Esquema de Morralla_V1 
+
 ⋅⋅*Codigo de Morralla_V1
 
 ⋅⋅*Libreria de Funciones empleadas 
