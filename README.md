@@ -64,18 +64,11 @@ IMAGEN DE PARTES AQUI
 El hardware que no viene incluido en estas maquinas y que puedes conseguir por mercadolibre o alguna otra pagina web es el siguiente:
 
 + Monedero Electrónico de Múltiples Monedas
-+ 
 + Arduino MEGA
-+ 
 + Relevador de 5v
-+ 
 + Lector de Billetes NV10USB
-+ 
 + Fuente 12v 3A para Lector de Billetes NV10USB
-+ 
 + Cable (2-3 mts)
-+ 
-
 
 ---
 ####LEER PULSOS DE MONEDERO
@@ -85,3 +78,5 @@ Queremos que la maquina lea distintas monedas y según estas monedas, expulse un
 monedero que viene con la maquina de tragamonedas de fruititas solo lee un tipo de moneda, este monedero no nos sirve, a
 menos que metamos uno de estos para cada tipo de moneda. Por el precio de $650, podemos emplear un solo
 monedero electrónico que se le puede configurar para que lea hasta 4 diferentes tipos de moneda.
+![alt text][monedero]
+[monedero]:https://www.dropbox.com/s/7k0sx4jpy3zcu6v/Screen%20Shot%202015-11-26%20at%208.23.59%20PM.png?dl=0 "Imagen del Monedero Electronico"
