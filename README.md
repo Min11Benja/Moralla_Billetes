@@ -41,6 +41,12 @@ Hay una alta demanda de feria todos los dias para comerciantes y compradores, y 
 
 "Morralla" es un proyecto personal, donde intento crear una solucion funcional y factible para este problema que veo a diario a mi alrededor. Esta maquina te provee de una forma simple, automatizada, confiable y accesible a toda hora del dia una forma de obtener feria en monedas y billetes de tu eleccion, a cambio de una pequeña cuota por transacción. (10% sobre el Billete)
 
+| Moneda    | Comission    | Recibes  |
+| ------------- |:-------------:| -----:|
+| $ 1.00 | -$ 0.00 | $ 1.00 |
+| $ 2.00 | -$ 0.00 | $ 5.00 |
+| $10.00 | -$1.00 | $ 9.00 |
+
 | Billete    | Comission    | Recibes  |
 | ------------- |:-------------:| -----:|
 | $ 20.00 | -$ 2.00 | $ 18.00 |
