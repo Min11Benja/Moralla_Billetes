@@ -1,23 +1,57 @@
-//Leer pulsos del Monedero + NV10USB y sumarlos como creditos por min11benja para Morralla
+//Leer pulsos del Monedero + NV10USB y sumarlos como creditos y mostrar en lcd por min11benja para Morralla
+/*-----( Librerias )-----*/
+#include <Wire.h>  // Comes with Arduino IDE
+// https://bitbucket.org/fmalpartida/new-liquidcrystal/downloads
+// Move any other LCD libraries to another folder or delete them
+#include <LiquidCrystal_I2C.h>//I2C_Ver_1
 
-//Variables Globales
-////Lo pongo como variables de tipo constante para guardar espacio en memoria
+
+/*-----( Constantes Globales )-----*/
+/*Lo pongo como variables de tipo constante para guardar espacio en memoria*/
 //***********************************************************************************************
 volatile unsigned long limite_pulsos = 3;
-  // EDITAR ESTE VALOR PARA CAMBIAR EL DELAY ENTRE DETECCION DE PULSOS-nesecito poner un DELAY es como una pausa entre la deteccion de pulsos para que el arduino me lea los pulsos sin arrojar basura, eh calado multiples valores y 500 es el mas estable
+ /* EDITAR ESTE VALOR PARA CAMBIAR EL DELAY ENTRE DETECCION DE PULSOS-nesecito poner un DELAY es como una pausa entre la deteccion de pulsos para que el arduino me lea los pulsos sin arrojar basura, eh calado multiples valores y 500 es el mas estable*/
 //***********************************************************************************************
 const int coin_pin = 2; //Asigno el valor de 2 para la variable donde conectare el pin que va a recibir los pulsos del monedero
 const int bill_pin = 3; //pin para el NV10USB
 
+/*-----( objectos )-----*/
+// set the LCD address to 0x27 for a 16 chars 2 line display
+// A FEW use address 0x3F
+// Set the pins on the I2C chip used for LCD connections:
+//addr, en,rw,rs,d4,d5,d6,d7,bl,blpol
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);  // Set the LCD I2C address
+
+/*-----( Variables Globales)-----*/
 ////// Una variable debe ser declarada como "volátil" cuando su valor puede ser cambiado por algo fuera del control de la sección de código en el que aparece, como un hilo al mismo tiempo de ejecución. En el Arduino, el único lugar que es probable que ocurra en secciones de código asociados a las interrupciones, llama una rutina de servicio de interrupción.
 volatile byte credit = 0;//Variable para guardar el valor de los pulsos contados
 volatile unsigned long tiempo_pulso_inicial; //Variable para guardar el tiempo en el que se leyo e pulso
 volatile unsigned long tiempo_pulso_final; //Variable para guardar el tiempo en el que se leyo e pulso
-byte cmd=0; //Esta variable guardara la letra que tecles en consola del ide del arduino
 
+/*----( SETUP: RUNS ONCE )----*/
 void setup() {
   Serial.begin(9600);// Establece la velocidad de datos en bits por segundo (baudios) para la transmisión de datos en serie. Para comunicarse con la pc
-  Serial.println("Cargando Setup, por favor esperar...");//Para mostrar en consola que ya inicio la funcion setup()
+
+/*----( LCD )----*/
+lcd.begin(16, 2);  // initialize the lcd for 16 chars 2 lines, turn on backlight
+
+  // ------- Quick 3 blinks of backlight  -------------
+  for (int i = 0; i < 3; i++)
+  {
+    lcd.backlight();
+    delay(250);
+    lcd.noBacklight();
+    delay(250);
+  }
+  lcd.backlight(); // finish with backlight on
+
+  //-------- Write characters on the display ------------------
+  // NOTE: Cursor Position: (CHAR, LINE) start at 0
+  lcd.setCursor(0, 0); //Start at character 4 on line 0
+  lcd.print("Cargando Setup");/*Para mostrar en consola que ya inicio la funcion setup()*/
+  lcd.setCursor(0,1);lcd.print("por favor esperar...");
+
+/*----( PIN MODE )----*/  
 //pinMode: Configura el pin especificado para comportarse ya sea como una entrada o una salida: pines digitales se pueden utilizar como entrada, INPUT_PULLUP o SALIDA. Cambiar el pin con la funcion pinMode () cambia el comportamiento eléctrico de la clavija.////*input: de afuera hacia el arduino - output*del arduino ahcia afuera - a pull-up* es la resistecia interna del arduino, que asegura que el pin este ya sea en un estado ALTO o BAJO, mientras emplea un nivel bajo de corriente.
   pinMode(coin_pin, INPUT_PULLUP);//establecemos el pin 2 (coin_pin) como tipo INPUT y le adjuntamos una resistencia interna para evitar rebotes
   pinMode(bill_pin, INPUT_PULLUP);//establecemos el pin 3 (bill_pin) como tipo INPUT y le adjuntamos una resistencia interna para evitar rebotes
@@ -37,11 +71,16 @@ void setup() {
 ////*CHANGE: acciona la interrupcion cada vez que el pin cambie de valor
 ////*RISING: acciona la interrupcion cuando el pin vaya de estado bajo a estado alto (0v a 5v)
 ////*FALLING: acciona la interrupcion cuando el pin vaya de estado alto a estado bajo (5v a 0v)
-  Serial.println("Morralla Setup Cargado correctamente.");//Imprimo en consola para notificarme que la funcion setup() llego a su fin
-}
+  lcd.clear();/*limpiar pantalla*/
+  lcd.setCursor(0, 0); //Start at character 4 on line 0
+  lcd.print("Morralla Setup");/*Imprimo en consola para notificarme que la funcion setup() llego a su fin*/
+  lcd.setCursor(0,1);lcd.print("Cargado correctamente.");
+}/*--(end setup )---*/
 
+/*----( LOOP: RUNS CONSTANTLY )----*/
 void loop() {
- 
+  
+/*--(if ruido else credit )---*/ 
  //Si hubo un pulso y este es mayor a la diferencia de tiempo entonces lo sumo como pulso si es menor es ruido y no lo sumo
 
   tiempo_pulso_inicial = micros();
@@ -52,32 +91,19 @@ void loop() {
     
     if( tiempo_pulso_final - tiempo_pulso_inicial > limite_pulsos){
       credit++;
-    }
-  }
-
-// Codigo para leer lo que introducimos en consola y tomar los valores “p” o “a”
-  cmd= Serial.read();
-  
-  switch (cmd) 
-  {
-    case 'c': //Muestra los creditos
-    Serial.println("CREDITOS:");
-    Serial.print(credit); 
-    break;
+    }/*--(end ruido o credit )---*/
+  }/*--(end if pulso )---*/
     
-    case 'r': //Resetea los creditos
-    credit=0;
-    break;
-    
-  } //fin de switch
-
+/*--(show credit lcd )---*/
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("CREDITOS:");/*me alerta en consola que hubo una moneda detectada*/
+      lcd.println(credit); /* imprime en consola el valor de esa moneda*/
   
-}//fin de loop
+}/*--(end loop )---*/
 
-//*****INTERUPCION al detectar pulsos del monedero
+/*--(INTERRUPCION )---*/
 void sumar_credit() //funcion invocada para incrementar el contador cont_pulsos_moneda
 {
   credit++;
-}
-
-
+}/*--(end interupcion )---*/
