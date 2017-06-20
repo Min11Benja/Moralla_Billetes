@@ -89,7 +89,7 @@ Una vez configurado el monedero múltiple, necesitamos calar que este monedero 
 Repita este procedimiento para cada moneda, de no leer un tipo de moneda o no mostrar los pulsos deseados, regrese al video y repita el procedimiento.
 
 | Moneda    |   $1.00  | $5.00  | $10.00  |
-| ------------- |:-------------:| -----:|
+| ------------- | -----:| -----:| -----:|
 | Pulsos | 1 | 5 | 10 |
 | Billetes | $ 20.00 | $ 50.00 | $ 100.00 | $ 200.00 |
 | Pulsos| 18 | 45 | 90 | 180 |
