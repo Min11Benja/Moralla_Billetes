@@ -70,7 +70,9 @@ El hardware que no viene incluido en estas maquinas y que puedes conseguir por m
 + Fuente 12v 3A para Lector de Billetes NV10USB
 + Cable (2-3 mts)
 
-[IMG HArdware MErcadoLibre]
+[IMG Hardware MercadoLibre]
+![screen shot 2017-06-20 at 11 15 55 am](https://user-images.githubusercontent.com/11970000/27343855-e5577d6c-55a9-11e7-930f-0d63ee7ae30a.png)
+
 ---
 ####LEER PULSOS DE MONEDERO
 
