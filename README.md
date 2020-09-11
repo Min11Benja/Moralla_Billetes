@@ -1,4 +1,8 @@
 ## Moralla_Billetes
+
+PDF tutorial paso a paso de como armar esta maquina
+https://drive.google.com/file/d/1STIBDis3MC1J_WjcIFt2KaZz-80KG3DJ/view?usp=sharing
+
 Codigo para Maquina Morralla_Billetes_Monedas
 
 ####INDICE
